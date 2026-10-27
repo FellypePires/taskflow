@@ -2,7 +2,7 @@
 
 > **Disciplina:** DevOps Tools (ADS · UNIPAR · 2026)
 > **Projeto:** TaskFlow, Checkpoint 1 (`v0.1`)
-> **Dupla:** Nome 1 (@usuario-github) e Nome 2 (@usuario-github)
+> **Autor:** Fellype Pires
 
 ## O cenário
 
