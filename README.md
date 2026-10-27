@@ -47,13 +47,13 @@ requirements.txt     # dependências com versões fixas
 
 ## Checkpoint 1 (tag `v0.1`): o que sua dupla deve fazer
 
-- [ ] Fazer **fork** deste repositório e adicionar o colega como *collaborator*
-- [ ] Criar um `.gitignore` para Python (inclua `.venv/` e `__pycache__/`)
-- [ ] Fazer **pelo menos 5 commits** no padrão [Conventional Commits](https://www.conventionalcommits.org/pt-br/v1.0.0/), dos dois integrantes
-- [ ] Substituir a seção "Integrantes" abaixo e completar este README
+- [x] Fazer **fork** deste repositório e adicionar o colega como *collaborator* (trabalho individual, sem collaborator)
+- [x] Criar um `.gitignore` para Python (inclua `.venv/` e `__pycache__/`)
+- [x] Fazer **pelo menos 5 commits** no padrão [Conventional Commits](https://www.conventionalcommits.org/pt-br/v1.0.0/), dos dois integrantes (trabalho individual)
+- [x] Substituir a seção "Integrantes" abaixo e completar este README
 - [ ] Adicionar o print do `git log --graph --oneline` do laboratório
-- [ ] Criar `docs/pbl-semana1.md` com a situação-problema EntregaJá
-- [ ] Criar a tag: `git tag v0.1` e `git push --tags`
+- [x] Criar `docs/pbl-semana1.md` com a situação-problema EntregaJá
+- [x] Criar a tag: `git tag v0.1` e `git push --tags`
 
 ## Integrantes
 
