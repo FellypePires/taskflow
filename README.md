@@ -57,5 +57,4 @@ requirements.txt     # dependências com versões fixas
 
 ## Integrantes
 
-- Nome 1 (@usuario-github)
-- Nome 2 (@usuario-github)
+- Fellype Pires (@FellypePires)
