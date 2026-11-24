@@ -10,6 +10,8 @@ API REST de tarefas em Python (FastAPI). Projeto-base da disciplina **DevOps Too
 | Método | Rota | O que faz |
 | --- | --- | --- |
 | GET | `/tasks` | Lista todas as tarefas |
+| GET | `/tasks/{id}` | Busca uma tarefa pelo id; retorna 404 se não existir |
+| GET | `/tasks?done=true` ou `?done=false` | Filtra tarefas por status; sem parâmetro, lista todas |
 | POST | `/tasks` | Cria uma tarefa (`{"title": "...", "done": false}`) |
 | PUT | `/tasks/{id}` | Atualiza uma tarefa |
 | DELETE | `/tasks/{id}` | Remove uma tarefa |
@@ -54,6 +56,17 @@ requirements.txt     # dependências com versões fixas
 - [ ] Adicionar o print do `git log --graph --oneline` do laboratório
 - [x] Criar `docs/pbl-semana1.md` com a situação-problema EntregaJá
 - [x] Criar a tag: `git tag v0.1` e `git push --tags`
+
+## Checkpoint 2 (tag `v0.2`)
+
+- `GET /tasks/{id}` retorna a tarefa ou HTTP 404.
+- `GET /tasks?done=true|false` filtra por status; sem parâmetro, lista tudo.
+- Os testes das duas funcionalidades ficam em arquivos separados em `tests/`.
+- `docs/pbl-semana2.md` e `docs/conflito.md` registram as atividades da Aula 02.
+
+O código deste checkpoint está preparado em commits locais. Os links de PR, a revisão por
+outra pessoa e a evidência visual do conflito precisam corresponder a ações reais no GitHub;
+nenhuma delas foi registrada nesta cópia local.
 
 ## Integrantes
 
