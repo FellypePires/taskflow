@@ -12,7 +12,7 @@ Um conflito desse tipo aparece com marcadores semelhantes a:
 ```text
 &#60;&#60;&#60;&#60;&#60;&#60;&#60; HEAD
 | GET | `/tasks/{id}` | Busca uma tarefa pelo id |
-=======
+&#61;&#61;&#61;&#61;&#61;&#61;&#61;
 | GET | `/tasks?done=true` | Filtra tarefas por status |
 &#62;&#62;&#62;&#62;&#62;&#62;&#62; feature/filtro-status
 ```
