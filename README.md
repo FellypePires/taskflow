@@ -1,5 +1,7 @@
 # TaskFlow
 
+[![CI](https://github.com/FellypePires/taskflow/actions/workflows/ci.yml/badge.svg)](https://github.com/FellypePires/taskflow/actions/workflows/ci.yml)
+
 API REST de tarefas em Python (FastAPI). Projeto-base da disciplina **DevOps Tools** (ADS · UNIPAR · 2026).
 
 > Este repositório começa **sem nenhuma automação**. A cada semana, sua dupla adiciona uma camada DevOps:
@@ -67,6 +69,34 @@ requirements.txt     # dependências com versões fixas
 O código deste checkpoint está preparado em commits locais. Os links de PR, a revisão por
 outra pessoa e a evidência visual do conflito precisam corresponder a ações reais no GitHub;
 nenhuma delas foi registrada nesta cópia local.
+
+## Integração contínua (Checkpoint 3)
+
+O workflow em `.github/workflows/ci.yml` é executado em `push` para `main` e em Pull Requests
+direcionados a `main`. Ele valida o estilo com Ruff e executa os testes com cobertura mínima de
+70%. O check do job se chama `testes`.
+
+### Evidências do fluxo vermelho e verde
+
+O professor pede capturas de um PR bloqueado por teste, do log do CI e do mesmo PR verde após a
+correção. Os arquivos abaixo devem ser adicionados depois da execução real do workflow no GitHub;
+esta cópia local ainda não contém essas capturas.
+
+- `docs/img/ci-bloqueado.png`
+- `docs/img/ci-log.png`
+- `docs/img/ci-verde.png`
+
+### GitHub Actions e Jenkins
+
+| Aspecto | GitHub Actions | Jenkins |
+| --- | --- | --- |
+| Configuração inicial | Workflow YAML no repositório; normalmente poucos passos para um projeto hospedado no GitHub. | Requer uma instância/agent acessível, instalação e configuração inicial de plugins e credenciais. |
+| Leitura | YAML próximo do código e versionado junto com ele. | Pipeline pode ser declarativo em `Jenkinsfile`; interface e plugins também influenciam a experiência. |
+| Onde executa | Runners hospedados pelo GitHub ou runners próprios. | Controller e agents administrados pela equipe, localmente ou em infraestrutura escolhida. |
+| Manutenção | GitHub mantém o serviço hospedado; o projeto mantém workflow, actions e runners próprios. | A equipe mantém servidor, atualizações, plugins, credenciais, disponibilidade e agentes. |
+
+Essa comparação descreve as opções técnicas. O laboratório comparativo do Jenkins ainda precisa
+ser executado para registrar a experiência e os tempos observados.
 
 ## Integrantes
 
