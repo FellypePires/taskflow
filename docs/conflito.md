@@ -10,11 +10,11 @@ fica em arquivos/trechos distintos e pode ser integrada separadamente.
 Um conflito desse tipo aparece com marcadores semelhantes a:
 
 ```text
-<<<<<<< HEAD
+&#60;&#60;&#60;&#60;&#60;&#60;&#60; HEAD
 | GET | `/tasks/{id}` | Busca uma tarefa pelo id |
 =======
 | GET | `/tasks?done=true` | Filtra tarefas por status |
->>>>>>> feature/filtro-status
+&#62;&#62;&#62;&#62;&#62;&#62;&#62; feature/filtro-status
 ```
 
 ## Como resolver
