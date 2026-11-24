@@ -35,8 +35,18 @@ def reset_db() -> None:
 
 
 @app.get("/tasks", response_model=list[Task])
-def list_tasks() -> list[Task]:
-    return list(_tasks.values())
+def list_tasks(done: bool | None = None) -> list[Task]:
+    tasks = list(_tasks.values())
+    if done is not None:
+        tasks = [task for task in tasks if task.done == done]
+    return tasks
+
+
+@app.get("/tasks/{task_id}", response_model=Task)
+def get_task(task_id: int) -> Task:
+    if task_id not in _tasks:
+        raise HTTPException(status_code=404, detail="Tarefa não encontrada")
+    return _tasks[task_id]
 
 
 @app.post("/tasks", response_model=Task, status_code=status.HTTP_201_CREATED)

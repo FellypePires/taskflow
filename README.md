@@ -1,5 +1,7 @@
 # TaskFlow
 
+[![CI](https://github.com/FellypePires/taskflow/actions/workflows/ci.yml/badge.svg)](https://github.com/FellypePires/taskflow/actions/workflows/ci.yml)
+
 API REST de tarefas em Python (FastAPI). Projeto-base da disciplina **DevOps Tools** (ADS · UNIPAR · 2026).
 
 > Este repositório começa **sem nenhuma automação**. A cada semana, sua dupla adiciona uma camada DevOps:
@@ -10,6 +12,8 @@ API REST de tarefas em Python (FastAPI). Projeto-base da disciplina **DevOps Too
 | Método | Rota | O que faz |
 | --- | --- | --- |
 | GET | `/tasks` | Lista todas as tarefas |
+| GET | `/tasks/{id}` | Busca uma tarefa pelo id; retorna 404 se não existir |
+| GET | `/tasks?done=true` ou `?done=false` | Filtra tarefas por status; sem parâmetro, lista todas |
 | POST | `/tasks` | Cria uma tarefa (`{"title": "...", "done": false}`) |
 | PUT | `/tasks/{id}` | Atualiza uma tarefa |
 | DELETE | `/tasks/{id}` | Remove uma tarefa |
@@ -54,6 +58,45 @@ requirements.txt     # dependências com versões fixas
 - [ ] Adicionar o print do `git log --graph --oneline` do laboratório
 - [x] Criar `docs/pbl-semana1.md` com a situação-problema EntregaJá
 - [x] Criar a tag: `git tag v0.1` e `git push --tags`
+
+## Checkpoint 2 (tag `v0.2`)
+
+- `GET /tasks/{id}` retorna a tarefa ou HTTP 404.
+- `GET /tasks?done=true|false` filtra por status; sem parâmetro, lista tudo.
+- Os testes das duas funcionalidades ficam em arquivos separados em `tests/`.
+- `docs/pbl-semana2.md` e `docs/conflito.md` registram as atividades da Aula 02.
+
+O código deste checkpoint está preparado em commits locais. Os links de PR, a revisão por
+outra pessoa e a evidência visual do conflito precisam corresponder a ações reais no GitHub;
+nenhuma delas foi registrada nesta cópia local.
+
+## Integração contínua (Checkpoint 3)
+
+O workflow em `.github/workflows/ci.yml` é executado em `push` para `main` e em Pull Requests
+direcionados a `main`. Ele valida o estilo com Ruff e executa os testes com cobertura mínima de
+70%. O check do job se chama `testes`.
+
+### Evidências do fluxo vermelho e verde
+
+O professor pede capturas de um PR bloqueado por teste, do log do CI e do mesmo PR verde após a
+correção. Os arquivos abaixo devem ser adicionados depois da execução real do workflow no GitHub;
+esta cópia local ainda não contém essas capturas.
+
+- `docs/img/ci-bloqueado.png`
+- `docs/img/ci-log.png`
+- `docs/img/ci-verde.png`
+
+### GitHub Actions e Jenkins
+
+| Aspecto | GitHub Actions | Jenkins |
+| --- | --- | --- |
+| Configuração inicial | Workflow YAML no repositório; normalmente poucos passos para um projeto hospedado no GitHub. | Requer uma instância/agent acessível, instalação e configuração inicial de plugins e credenciais. |
+| Leitura | YAML próximo do código e versionado junto com ele. | Pipeline pode ser declarativo em `Jenkinsfile`; interface e plugins também influenciam a experiência. |
+| Onde executa | Runners hospedados pelo GitHub ou runners próprios. | Controller e agents administrados pela equipe, localmente ou em infraestrutura escolhida. |
+| Manutenção | GitHub mantém o serviço hospedado; o projeto mantém workflow, actions e runners próprios. | A equipe mantém servidor, atualizações, plugins, credenciais, disponibilidade e agentes. |
+
+Essa comparação descreve as opções técnicas. O laboratório comparativo do Jenkins ainda precisa
+ser executado para registrar a experiência e os tempos observados.
 
 ## Integrantes
 
